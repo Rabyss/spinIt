@@ -1,1 +1,3 @@
 # spinIt
+
+Based on the work on another project that I had a good laugh contributing to...
