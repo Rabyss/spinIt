@@ -44,17 +44,14 @@ function startSpinner() {
 		}
 
 		for (var i = 0; i < triangles.length; i++) {
-			/*
-			if (iteration < 100) {
-				triangles[i].size -= 4 * Math.log(spawned) * Math.cos(spawned / 5)
-			} else {
-				triangles[i].size += 11
-			}
-			*/
 	
 			triangles[i].size += 10
 
-			ctx.lineWidth = Math.round(10 - (triangles[i].size / 200))
+			var linewidth = Math.round(10 - (triangles[i].size / 200))
+			if (linewidth <= 0) {
+				linewidth = 0.1
+			}
+			ctx.lineWidth = linewidth
 			ctx.strokeStyle = 'rgba(' + (triangles[i].size / 5 + 80) + ', 182, 196, 1)'
 			drawTriangle(triangles[i].size, deg2rad(-triangles[i].size / 100 - triangles[i].life * 1.4))
 		}
