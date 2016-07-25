@@ -7,6 +7,7 @@
     <meta name="description" content="Spinit : Just a spinner">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <script src="spinner.js"></script>
 
     <title>Spinit</title>
   </head>
@@ -42,6 +43,21 @@ src="https://www.youtube.com/embed/PGNiXGX2nLU">
 </iframe></p>
       </section>
     </div>
+    
+    <body>
+			<canvas id="spinner"></canvas>
+	</body>
+	<script>
+		document.body.onkeyup = function(e){
+			if (e.keyCode == 32) {
+				if (anim) {
+					stopSpinner()
+				} else {
+				       	startSpinner();
+				}
+			}
+		};
+	</script>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
